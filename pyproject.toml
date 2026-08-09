@@ -1,0 +1,49 @@
+[project]
+name = "quantforge"
+version = "0.1.0"
+description = "Open-source quantitative finance research platform for market data engineering, strategy development, backtesting, portfolio optimization, machine learning, and AI-driven market analysis."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Your Name"}]
+
+dependencies = [
+    "numpy",
+    "pandas",
+    "polars",
+    "pyarrow",
+    "duckdb",
+    "pydantic",
+    "pydantic-settings",
+    "requests",
+    "httpx",
+    "python-dotenv",
+    "scipy",
+    "yfinance",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "mypy",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["quantforge*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
